@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:23:33 by tatahere          #+#    #+#             */
-/*   Updated: 2025/06/02 19:44:29 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/06/03 20:57:52 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,37 +54,37 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 	std::cout << "Bureaucrat constructor." << std::endl;
 	this->_name = name;
 	if (grade < 1)
-		throw GradeTooLowException("grade to low for initialization.");
-	if (grade > 150)
 		throw GradeTooHighException("grade to high for initiaization.");
+	if (grade > 150)
+		throw GradeTooLowException("grade to low for initialization.");
 	this->_grade = grade;
 }
 
 std::string	Bureaucrat::getName(void) const
 {
-	std::cout << "Bureaucrat name geter." << std::endl;
+//	std::cout << "Bureaucrat name geter." << std::endl;
 	return (this->_name);
 }
 
 int			Bureaucrat::getGrade(void) const
 {
-	std::cout << "Bureaucrat grade geter." << std::endl;
+//	std::cout << "Bureaucrat grade geter." << std::endl;
 	return (this->_grade);
-}
-
-void		Bureaucrat::incrementGrade(void)
-{
-	std::cout << "Bureaucrat increment grade." << std::endl;
-	if (this->_grade >= 150)
-		throw GradeTooHighException("unable to increment grade.");
-	this->_grade += 1;
 }
 
 void		Bureaucrat::decrementGrade(void)
 {
 	std::cout << "Bureaucrat decrement grade." << std::endl;
-	if (this->_grade <= 1)
+	if (this->_grade >= 150)
 		throw GradeTooLowException("unable to decrement grade.");
+	this->_grade += 1;
+}
+
+void		Bureaucrat::incrementGrade(void)
+{
+	std::cout << "Bureaucrat increment grade." << std::endl;
+	if (this->_grade <= 1)
+		throw GradeTooHighException("unable to increment grade.");
 	this->_grade -= 1;
 }
 
