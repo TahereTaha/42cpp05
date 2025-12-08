@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:00:08 by dacortes          #+#    #+#             */
-/*   Updated: 2025/06/03 20:59:18 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/12/08 19:58:07 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,12 @@ int	main(void)
 				{
 					Bureaucrat	bureaucrat_n3241("n3241", 0);
 				}
-				catch (const GradeTooLowException& e)
+				catch (const Bureaucrat::GradeTooLowException& e)
 				{
 					std::cout << "\tkind grade too low exception." << std::endl;
 					std::cout << "\t" << e.what() << std::endl;
 				}
-				catch (const GradeTooHighException& e)
+				catch (const Bureaucrat::GradeTooHighException& e)
 				{
 					std::cout << "\tkind grade too high exception." << std::endl;
 					std::cout << "\t" << e.what() << std::endl;
@@ -58,12 +58,12 @@ int	main(void)
 				{
 					Bureaucrat	bureaucrat_n3241("n3241", 200);
 				}
-				catch (const GradeTooLowException& e)
+				catch (const Bureaucrat::GradeTooLowException& e)
 				{
 					std::cout << "\tkind grade too low exception." << std::endl;
 					std::cout << "\t" << e.what() << std::endl;
 				}
-				catch (const GradeTooHighException& e)
+				catch (const Bureaucrat::GradeTooHighException& e)
 				{
 					std::cout << "\tkind grade too high exception." << std::endl;
 					std::cout << "\t" << e.what() << std::endl;

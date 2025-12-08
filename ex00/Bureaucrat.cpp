@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:23:33 by tatahere          #+#    #+#             */
-/*   Updated: 2025/06/03 20:57:52 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/12/08 19:58:41 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 #include <string>
 #include <iostream>
 
-GradeTooLowException::GradeTooLowException(const std::string & msg) :std::range_error(msg)
+Bureaucrat::GradeTooLowException::GradeTooLowException(const std::string & msg)
+	:std::range_error(msg)
 {}
 
-GradeTooHighException::GradeTooHighException(const std::string & msg) :std::range_error(msg)
+Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string & msg)
+	:std::range_error(msg)
 {}
 
 Bureaucrat::Bureaucrat(void)
@@ -54,9 +56,9 @@ Bureaucrat::Bureaucrat(std::string name, int grade)
 	std::cout << "Bureaucrat constructor." << std::endl;
 	this->_name = name;
 	if (grade < 1)
-		throw GradeTooHighException("grade to high for initiaization.");
+		throw Bureaucrat::GradeTooHighException("grade to high for initiaization.");
 	if (grade > 150)
-		throw GradeTooLowException("grade to low for initialization.");
+		throw Bureaucrat::GradeTooLowException("grade to low for initialization.");
 	this->_grade = grade;
 }
 
@@ -76,7 +78,7 @@ void		Bureaucrat::decrementGrade(void)
 {
 	std::cout << "Bureaucrat decrement grade." << std::endl;
 	if (this->_grade >= 150)
-		throw GradeTooLowException("unable to decrement grade.");
+		throw Bureaucrat::GradeTooLowException("unable to decrement grade.");
 	this->_grade += 1;
 }
 
@@ -84,7 +86,7 @@ void		Bureaucrat::incrementGrade(void)
 {
 	std::cout << "Bureaucrat increment grade." << std::endl;
 	if (this->_grade <= 1)
-		throw GradeTooHighException("unable to increment grade.");
+		throw Bureaucrat::GradeTooHighException("unable to increment grade.");
 	this->_grade -= 1;
 }
 

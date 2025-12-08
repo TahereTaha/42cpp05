@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:30 by tatahere          #+#    #+#             */
-/*   Updated: 2025/06/02 19:39:28 by tatahere         ###   ########.fr       */
+/*   Updated: 2025/12/08 19:59:52 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ class Bureaucrat
 		int			_grade;
 
 	public:
-		
 
 		Bureaucrat(void);
 		Bureaucrat(const Bureaucrat & src);
@@ -37,17 +36,16 @@ class Bureaucrat
 		void		incrementGrade(void);
 		void		decrementGrade(void);
 
-};
-
-class GradeTooLowException : public std::range_error
-{
-	public:
-		GradeTooLowException(const std::string & msg);
-};
-class GradeTooHighException : public std::range_error
-{
-	public:
-		GradeTooHighException(const std::string & msg);
+		class GradeTooLowException : public std::range_error
+		{
+			public:
+				GradeTooLowException(const std::string & msg);
+		};
+		class GradeTooHighException : public std::range_error
+		{
+			public:
+				GradeTooHighException(const std::string & msg);
+		};
 };
 
 std::ostream & operator << (std::ostream & out_s, const Bureaucrat & obj);
