@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:30 by tatahere          #+#    #+#             */
-/*   Updated: 2026/01/10 16:00:28 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/01/10 18:02:31 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 # include <string>
 # include <iostream>
 
-#define BUREAUCRAT_GRADE_HIGHEST 1
-#define BUREAUCRAT_GRADE_LOWEST 150
+#define BUREAUCRAT_GRADE_HIGHEST	1
+#define BUREAUCRAT_GRADE_LOWEST		150
+
+#define BUREAUCRAT_DEFAULT_NAME		"no_name"
+#define BUREAUCRAT_DEFAULT_GRADE	50
 
 class Bureaucrat
 {

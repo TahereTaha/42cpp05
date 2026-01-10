@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:23:33 by tatahere          #+#    #+#             */
-/*   Updated: 2026/01/10 17:03:00 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/01/10 18:04:08 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ Bureaucrat::GradeTooHighException::GradeTooHighException(const std::string & msg
 {}
 
 //	canonical orthodox form.
-Bureaucrat::Bureaucrat(void) : _name("no_name")
+Bureaucrat::Bureaucrat(void) :
+	_name(BUREAUCRAT_DEFAULT_NAME),
+	_grade(BUREAUCRAT_DEFAULT_GRADE)
 {
 	std::cout << "Bureaucrat default constructor." << std::endl;
-	this->_grade = BUREAUCRAT_GRADE_LOWEST;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat & src): _name(src._name)
