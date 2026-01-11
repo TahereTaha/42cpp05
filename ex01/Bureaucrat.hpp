@@ -6,23 +6,26 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:30 by tatahere          #+#    #+#             */
-/*   Updated: 2025/12/10 20:58:16 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/01/10 18:02:31 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#pragma once
 
 # include <string>
 # include <iostream>
 
-class Form;
+#define BUREAUCRAT_GRADE_HIGHEST	1
+#define BUREAUCRAT_GRADE_LOWEST		150
+
+#define BUREAUCRAT_DEFAULT_NAME		"no_name"
+#define BUREAUCRAT_DEFAULT_GRADE	50
 
 class Bureaucrat
 {
 	private:
-		std::string	_name;
-		int			_grade;
+		const std::string	_name;
+		int					_grade;
 
 	public:
 
@@ -38,8 +41,6 @@ class Bureaucrat
 		void		incrementGrade(void);
 		void		decrementGrade(void);
 
-		void		signForm(Form & form) const ;
-
 		class GradeTooLowException : public std::range_error
 		{
 			public:
@@ -53,5 +54,3 @@ class Bureaucrat
 };
 
 std::ostream & operator << (std::ostream & out_s, const Bureaucrat & obj);
-
-#endif

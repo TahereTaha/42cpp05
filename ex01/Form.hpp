@@ -1,9 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/01/10 18:23:00 by tatahere          #+#    #+#             */
+/*   Updated: 2026/01/10 18:48:58 by tatahere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #pragma once
 
 #include <string>
+#include <iostream>
 #include <stdexcept>
 
 class Bureaucrat;
+
+#define FORM_GRADE_HIGHEST				1
+#define FORM_GRADE_LOWEST				150
+#define FORM_NOT_SIGNED					0
+#define FORM_SIGNED						1
+
+#define FORM_DEFAULT_NAME				"no_name"
+#define FORM_DEFAULT_GRADE_TO_SIGN		100
+#define FORM_DEFAULT_GRADE_TO_EXECUTE	50
+
 
 class Form
 {
