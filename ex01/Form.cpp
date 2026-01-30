@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 18:23:05 by tatahere          #+#    #+#             */
-/*   Updated: 2026/01/11 16:24:46 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/01/30 21:12:28 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ Form::Form(const std::string & name, const int gradeToSign, const int gradeToExe
 	_gradeToSign(gradeToSign), 
 	_gradeToExecute(gradeToExecute)
 {
+	std::cout << "Form constructor." << std::endl;
 	if (this->_gradeToSign < FORM_GRADE_HIGHEST)
 		throw (Form::GradeTooHighException("grade to sign too high for initialization"));
 	if (this->_gradeToSign > FORM_GRADE_LOWEST)
@@ -104,7 +105,7 @@ int			Form::getGradeToExecute(void) const
 void	Form::beSigned(const Bureaucrat & signee)
 {
 	if (this->_isSigned)
-		throw (Form::GradeTooLowException("form alredy signed"));
+		throw (std::logic_error("form alredy signed"));
 	if (signee.getGrade() > this->_gradeToSign)
 		throw (Form::GradeTooLowException("bureaucrat grade to low for signing this form"));
 	this->_isSigned = 1;

@@ -6,7 +6,7 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:00:08 by dacortes          #+#    #+#             */
-/*   Updated: 2026/01/11 16:28:22 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/01/30 21:11:08 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,77 @@ int	main(void)
 						<< typeid(e).name() 
 						<< std::endl;
 					std::cout << "\tthe error msg is:\t\t" << e.what() << std::endl;
+				}
+			}
+		}
+	}
+
+	//	form methods.
+	{
+		std::cout << "\n";
+		std::cout << "//" << std::endl;
+		std::cout << "//\tmedthods." << std::endl;
+		std::cout << "//" << std::endl;
+		std::cout << std::endl;
+		{
+			std::cout << "\n//\tusing the method beSigned.\n" << std::endl;
+			{
+				std::cout << "\n//\t\t\tstandard use of the method.\n" << std::endl;
+				{
+					Bureaucrat	employe4132("martin", 50);
+					std::cout << employe4132 << std::endl;
+					
+					Form		form4132("church tax deductions", 100, 70);
+					std::cout << form4132 << std::endl;
+
+					form4132.beSigned(employe4132);
+				}
+				std::cout << "\n//\t\t\teronius us of the method, ";
+				std::cout << "trying to sign a form with grade to low.\n" << std::endl;
+				{
+					Bureaucrat	employe4132("martin", 120);
+					std::cout << employe4132 << std::endl;
+					
+					Form		form4132("church tax deductions", 100, 70);
+					std::cout << form4132 << std::endl;
+
+					try
+					{
+						form4132.beSigned(employe4132);
+					}
+					catch (std::exception &e)
+					{
+						std::cout << RED "EXCEPTION CAUGHT:" RESET << std::endl;
+						std::cout 
+							<< "\tthe type of the exception is:\t" 
+							<< typeid(e).name() 
+							<< std::endl;
+						std::cout << "\tthe error msg is:\t\t" << e.what() << std::endl;
+					}
+				}
+				std::cout << "\n//\t\t\teronius us of the method, ";
+				std::cout << "trying to sign a form twice.\n" << std::endl;
+				{
+					Bureaucrat	employe4132("martin", 50);
+					std::cout << employe4132 << std::endl;
+					
+					Form		form4132("church tax deductions", 100, 70);
+					std::cout << form4132 << std::endl;
+
+					form4132.beSigned(employe4132);
+					try
+					{
+						form4132.beSigned(employe4132);
+					}
+					catch (std::exception &e)
+					{
+						std::cout << RED "EXCEPTION CAUGHT:" RESET << std::endl;
+						std::cout 
+							<< "\tthe type of the exception is:\t" 
+							<< typeid(e).name() 
+							<< std::endl;
+						std::cout << "\tthe error msg is:\t\t" << e.what() << std::endl;
+					}
 				}
 			}
 		}

@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:30 by tatahere          #+#    #+#             */
-/*   Updated: 2026/01/10 18:02:31 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/01/30 20:23:34 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 # include <string>
 # include <iostream>
+
+class Form;
 
 #define BUREAUCRAT_GRADE_HIGHEST	1
 #define BUREAUCRAT_GRADE_LOWEST		150
@@ -40,6 +42,8 @@ class Bureaucrat
 		int			getGrade(void) const;
 		void		incrementGrade(void);
 		void		decrementGrade(void);
+
+		void	signForm(Form &formToSign);
 
 		class GradeTooLowException : public std::range_error
 		{

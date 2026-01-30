@@ -6,11 +6,12 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:23:33 by tatahere          #+#    #+#             */
-/*   Updated: 2026/01/10 18:04:08 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/01/30 20:37:32 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 #include <string>
 #include <iostream>
 
@@ -89,6 +90,22 @@ void		Bureaucrat::incrementGrade(void)
 	if (this->_grade <= BUREAUCRAT_GRADE_HIGHEST)
 		throw Bureaucrat::GradeTooHighException("unable to increment grade");
 	this->_grade -= 1;
+}
+
+void		Bureaucrat::signForm(Form &formToSign)
+{
+	std::cout << "Bureaucrat sign form." << std::endl;
+	try
+	{
+		formToSign.beSigned(*this);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << this->_name << " could't sign " << formToSign.getName();
+		std::cout << " because " << e.what() << std::endl;
+		return ;
+	}
+	std::cout << this->_name << " signed " << formToSign.getName();
 }
 
 //	stream insertion operator overloading.
