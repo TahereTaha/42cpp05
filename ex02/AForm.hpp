@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 18:23:00 by tatahere          #+#    #+#             */
-/*   Updated: 2026/01/31 15:58:47 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/02/05 00:32:53 by taha             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ class AForm
 
 		AForm(void);
 		AForm(const AForm & src);
-		~AForm(void);
+		virtual ~AForm(void);
 		AForm & operator = (const AForm & src);
 
 		AForm(const std::string & name, const int gradeToSign, const int gradeToExecute);

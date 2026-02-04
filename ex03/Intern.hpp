@@ -1,5 +1,8 @@
 #pragma once
 
+#include "AForm.hpp"
+#include <string>
+
 class Intern
 {
 	private:
@@ -9,4 +12,5 @@ class Intern
 		~Intern(void);
 		Intern & operator = (const Intern & src);
 
+		static AForm	*makeForm(std::string form_name, std::string target);
 };
