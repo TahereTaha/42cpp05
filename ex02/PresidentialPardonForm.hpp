@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 18:23:00 by tatahere          #+#    #+#             */
-/*   Updated: 2026/02/04 20:42:09 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:42:55 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 #include <stdexcept>
 
 
-class RobotomyRequestForm : public AForm
+class PresidentialPardonForm : public AForm
 {
 	private:
 	protected:
 	public:
 
-		RobotomyRequestForm(void);
-		RobotomyRequestForm(const RobotomyRequestForm & src);
-		~RobotomyRequestForm(void);
-		RobotomyRequestForm & operator = (const RobotomyRequestForm & src);
+		PresidentialPardonForm(void);
+		PresidentialPardonForm(const PresidentialPardonForm & src);
+		~PresidentialPardonForm(void);
+		PresidentialPardonForm & operator = (const PresidentialPardonForm & src);
 
-		RobotomyRequestForm(const std::string &target);
+		PresidentialPardonForm(const std::string &target);
 
 		void	acction(void) const ;
 };

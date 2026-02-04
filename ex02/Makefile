@@ -6,7 +6,7 @@
 #    By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/31 09:52:48 by tatahere          #+#    #+#              #
-#    Updated: 2026/02/04 19:52:16 by tatahere         ###   ########.fr        #
+#    Updated: 2026/02/04 20:47:01 by tatahere         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ OBJ		:=	main.o							\
 			AForm.o							\
 			ShrubberyCreationForm.o			\
 			RobotomyRequestForm.o			\
+			PresidentialPardonForm.o		\
 
 OBJ		:=	$(addprefix $(BIN_DIR), $(OBJ))
 
