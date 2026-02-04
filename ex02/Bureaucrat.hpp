@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/25 19:43:30 by tatahere          #+#    #+#             */
-/*   Updated: 2026/01/31 13:15:41 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/02/02 19:20:52 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ class Bureaucrat
 		void		decrementGrade(void);
 
 		void	signForm(AForm &formToSign);
+		void	executeForm(AForm &formToExecute);
 
 		class GradeTooLowException : public std::range_error
 		{

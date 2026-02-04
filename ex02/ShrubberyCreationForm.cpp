@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 18:23:05 by tatahere          #+#    #+#             */
-/*   Updated: 2026/01/31 16:17:47 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/02/04 19:43:02 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <string>
 #include <iostream>
 #include <stdexcept>
+#include <fstream>
 
 #include "Bureaucrat.hpp"
 
@@ -53,8 +54,44 @@ ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
 
 // methods.
 
+
 void	ShrubberyCreationForm::acction(void) const 
 {
-	std::cout << "the ShrubberyCreationForm acction. with the name: " << this->getName() << std::endl;
+	std::fstream	fs;
+	fs.open(("./" + this->getName()).c_str(), std::fstream::out | std::fstream::trunc);
+
+	fs	<< "       _-_\n"
+		<< "    /~~   ~~\\\n"
+		<< " /~~         ~~\\\n"
+		<< "{               }\n"
+		<< " \\  _-     -_  /\n"
+		<< "   ~  \\\\ //  ~\n"
+		<< "_- -   | | _- _\n"
+		<< "  _ -  | |   -_\n"
+		<< "      // \\\\\n" << std::endl;
+
+	fs	<< "       _-_\n"
+		<< "    /~~   ~~\\\n"
+		<< " /~~         ~~\\\n"
+		<< "{               }\n"
+		<< " \\  _-     -_  /\n"
+		<< "   ~  \\\\ //  ~\n"
+		<< "_- -   | | _- _\n"
+		<< "  _ -  | |   -_\n"
+		<< "      // \\\\\n" << std::endl;
+
+	fs	<< "       _-_\n"
+		<< "    /~~   ~~\\\n"
+		<< " /~~         ~~\\\n"
+		<< "{               }\n"
+		<< " \\  _-     -_  /\n"
+		<< "   ~  \\\\ //  ~\n"
+		<< "_- -   | | _- _\n"
+		<< "  _ -  | |   -_\n"
+		<< "      // \\\\\n" << std::endl;
+
+	fs.close();
+
+	std::cout << "the ShrubberyCreationForm created the file: " << this->getName() << std::endl;
 }
 

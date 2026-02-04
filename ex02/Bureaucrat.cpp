@@ -6,7 +6,7 @@
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/02 14:23:33 by tatahere          #+#    #+#             */
-/*   Updated: 2026/01/31 16:52:35 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/02/04 18:48:17 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,22 @@ void		Bureaucrat::signForm(AForm &formToSign)
 		return ;
 	}
 	std::cout << this->_name << " signed " << formToSign.getName() << std::endl;
+}
+
+void		Bureaucrat::executeForm(AForm &formToExecute)
+{
+	std::cout << "Bureaucrat execute form." << std::endl;
+	try
+	{
+		formToExecute.execute(*this);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << this->_name << " could't execute " << formToExecute.getName();
+		std::cout << " because " << e.what() << std::endl;
+		return ;
+	}
+	std::cout << this->_name << " executed " << formToExecute.getName() << std::endl;
 }
 
 //	stream insertion operator overloading.
