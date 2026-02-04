@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tatahere <tatahere@student.42barcelon      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/10 18:23:00 by tatahere          #+#    #+#             */
-/*   Updated: 2026/02/04 19:49:35 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/02/04 19:50:11 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,18 @@
 #include <stdexcept>
 
 
-class ShrubberyCreationForm : public AForm
+class RobotomyRequestForm : public AForm
 {
 	private:
 	protected:
 	public:
 
-		ShrubberyCreationForm(void);
-		ShrubberyCreationForm(const ShrubberyCreationForm & src);
-		~ShrubberyCreationForm(void);
-		ShrubberyCreationForm & operator = (const ShrubberyCreationForm & src);
+		RobotomyRequestForm(void);
+		RobotomyRequestForm(const RobotomyRequestForm & src);
+		~RobotomyRequestForm(void);
+		RobotomyRequestForm & operator = (const RobotomyRequestForm & src);
 
-		ShrubberyCreationForm(const std::string &target);
+		RobotomyRequestForm(const std::string &target);
 
 		void	acction(void) const ;
 };

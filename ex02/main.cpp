@@ -6,13 +6,14 @@
 /*   By: dacortes <dacortes@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 15:00:08 by dacortes          #+#    #+#             */
-/*   Updated: 2026/02/04 18:56:04 by tatahere         ###   ########.fr       */
+/*   Updated: 2026/02/04 20:09:25 by tatahere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
 #include <string>
 #include <iostream>
@@ -122,6 +123,26 @@ int	main(void)
 		std::cout << employe4132 << std::endl;
 
 		AForm *form_x = new ShrubberyCreationForm("home");
+		std::cout << *form_x << std::endl;
+
+		employe4132.signForm(*form_x);
+		employe4132.executeForm(*form_x);
+	}
+	
+	std::cout << "\n//" << std::endl;
+	std::cout << "//\ttexsting robotomy request." << std::endl;
+	std::cout << "//" << std::endl;
+	{
+		std::cout  <<  "\n//\ttesting the correct grades.\n" << std::endl;
+		AForm *form_x = new RobotomyRequestForm("home");
+		std::cout << *form_x << std::endl;
+	}
+	{
+		std::cout  <<  "\n//\texecuting the shrubbery creation.\n" << std::endl;
+		Bureaucrat  employe4132("jef", 10);
+		std::cout << employe4132 << std::endl;
+
+		AForm *form_x = new RobotomyRequestForm("home");
 		std::cout << *form_x << std::endl;
 
 		employe4132.signForm(*form_x);
